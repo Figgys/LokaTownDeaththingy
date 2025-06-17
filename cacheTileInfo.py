@@ -28,8 +28,7 @@ def generateData(world: str) :
                     tileNum = tile['num']
                     if tile["tg"] is not None and 'beacon' in tile["tg"] :
                         tgenList = tile['tg']['beacon']
-                        # "beacon" : "south,1514.0,142.0,3464.0",
-                        loc,x,y,z = tgenList.split(",")  # loc is south which we dont need cause we already have it
+                        loc,x,y,z = tgenList.split(",")
                     else :
                         x,y,z = None, None, None
 
@@ -61,6 +60,6 @@ def pullFromCache(world: str, tileNum: str) :
                       list = f"{tile['location']['biome']},{tile['location']['tgen']['x']},{tile['location']['tgen']['y']},{tile['location']['tgen']['z']}"
                       return list
                  
-generateData("west") # Ascalon
-generateData("north") # Kalros
-generateData("south") # Garama
+generateData("west")
+generateData("north")
+generateData("south")
