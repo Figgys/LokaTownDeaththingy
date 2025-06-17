@@ -2,6 +2,7 @@ import requests
 import json
 from cacheTileInfo import pullFromCache
 
+
 responseTowns = requests.get('https://api.lokamc.com/towns/search/findDeleted')
 
 deletedTowns = {"seenTowns": []}
@@ -17,8 +18,8 @@ def appendToList() :
         biome,x,y,z = list.split(",")
 
         global currentNum
-        currentNum += 1 
-        print(name, world, tileNum, biome, x, y, z, currentNum) #Anything with current num isnt needed but i like it
+        currentNum += 1
+        print(name, world, tileNum, biome, x, y, z, currentNum)
 
         newTownJsonFormat = {
             'name': name, 
@@ -33,7 +34,6 @@ def appendToList() :
             }
     
         deletedTowns['seenTowns'].append(newTownJsonFormat)
-
 
 appendToList()
 
